@@ -120,11 +120,10 @@ main grid */
     <h1 id="login-header">Login</h1>
     
     <div id="login-error-msg-holder">
-      <p id="login-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p>
+      <p id="login-error-msg">Invalid Credentials.</p>
     </div>
     
     <form id="login-form">
-      <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
       <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
       <input type="submit" value="Login" id="login-form-submit">
     </form>
@@ -141,15 +140,12 @@ loginButton.addEventListener("click", (e) => {
     // Prevent the default submission of the form
     e.preventDefault();
     // Get the values input by the user in the form fields
-    const username = loginForm.username.value;
     const password = loginForm.password.value;
 
-    if (username === "user" && password === "sowmik") {
+    if (password === "user") {
         // If the credentials are valid, show an alert box and reload the page
-        alert("You have successfully logged in.");
-        location.reload();
+        window.location.replace("http://xpin2.rf.gd/");
     } else {
-        // Otherwise, make the login error message show (change its oppacity)
         loginErrorMsg.style.opacity = 1;
     }
 })
